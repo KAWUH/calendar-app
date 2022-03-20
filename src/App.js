@@ -9,7 +9,9 @@ import DateTimePicker from 'react-datetime-picker';
 import 'react-datetime-picker/dist/DateTimePicker.css'
 import 'react-calendar/dist/Calendar.css'
 import 'react-clock/dist/Clock.css'
+import { eventsRef } from "./firebase"
 import "./App.css";
+
 
 const locales = {
     "pl": require("date-fns/locale/pl"),
@@ -26,13 +28,28 @@ const localizer = dateFnsLocalizer({
 const events = [];
 
 
+
+
 export default function App() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState(events);
 
+
+    function saveEvent() {
+        const item = {
+            title: newEvent.title,
+            start: newEvent.start,
+            end: newEvent.end
+        }
+        eventsRef.push(item)
+    }
+
     function handleAddEvent() {
+        saveEvent();
         setAllEvents([...allEvents, newEvent]);
     }
+
+    
 
     return (
         <div className="App">
