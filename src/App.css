@@ -1,0 +1,66 @@
+.App {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.add-event {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	width: max-content;
+	height: fit-content;
+	z-index: 10;
+}
+
+.add-event input, datepicker {
+	margin-top: 3%;
+}
+
+
+.add-event-button {
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	background-color:#2dabf9;
+	border-radius:20px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	margin-top: 1%;
+}
+.add-event-button:hover {
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	background-color:#0688fa;
+}
+.add-event-button:active {
+	position:relative;
+	top:1px;
+}
+
+.add-event input {
+	width: 100%;
+}
+
+.add-event input:hover {
+	background-color: rgba(123, 222, 255, 0.363);
+}
+
+.add-event input:active {
+	background-color: rgba(123, 222, 255, 0.363);
+}
+
+.calendar-container {
+	margin-top: 5%;
+	z-index: 5;
+	width: 70%;
+}
